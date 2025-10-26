@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Informasi Stok - JAKA INVENTORY APPS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-stok">
+  <header class="page-header" align="center">
+    <h1>Informasi Stok Bahan Ajar</h1>
+    <p class="muted">Data diambil dari data STOK <code>dataBahanAjar</code>.</p>
+  </header>
+
+  <main class="container">
+    <section class="table-card">
+      <table id="stokTable">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Kode</th>
+            <th>Judul</th>
+            <th>Jenis</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="form-inline">
+        <input id="newKode" placeholder="Kode" />
+        <input id="newJudul" placeholder="Judul" />
+        <input id="newJenis" placeholder="Jenis" />
+        <input id="newStok" type="number" min="0" placeholder="Stok" />
+        <button id="addRow" class="btn">Tambah Baris</button>
+      </div>
+       <div>
+        <a class="btn small" href="dashboard.html">kembali</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

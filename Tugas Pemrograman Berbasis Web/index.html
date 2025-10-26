@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - JAKA INVENTORY APPS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-login">
+  <main class="container auth-card">
+    <h1 class="brand">JAKA INVENTORY APPS</h1>
+    <p class="lead">Masuk untuk mengelola pemesanan bahan ajar</p>
+
+    <form id="loginForm" class="form-card" autocomplete="off">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="email@ut.ac.id" required />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="password" required />
+
+      <button type="submit" class="btn primary">Login</button>
+
+      <div class="helper-row">
+        <button type="button" id="forgotBtn" class="link-btn">Lupa Password</button>
+        <button type="button" id="registerBtn" class="link-btn">Daftar</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Modal: Forgot -->
+  <div class="modal" id="modalForgot" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" data-close>&times;</button>
+      <h3>Lupa Password</h3>
+      <p>Masukkan email Anda — instruksi reset akan dikirim (simulasi).</p>
+      <input id="forgotEmail" type="email" placeholder="email@ut.ac.id" />
+      <button id="sendForgot" class="btn">Kirim</button>
+    </div>
+  </div>
+
+  <!-- Modal: Register -->
+  <div class="modal" id="modalRegister" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" data-close>&times;</button>
+      <h3>Daftar Akun</h3>
+      <p>Simulasi pendaftaran — data tidak dikirim ke server.</p>
+      <input id="registerEmail" type="email" placeholder="email@ut.ac.id" />
+      <input id="registerPassword" type="password" placeholder="password" />
+      <button id="doRegister" class="btn">Daftar</button>
+    </div>
+  </div>
+ <footer>
+        <b><p align ="center">&copy; 2025 JAKA </p></b>
+    </footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

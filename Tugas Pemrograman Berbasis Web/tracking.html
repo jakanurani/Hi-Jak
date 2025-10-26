@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tracking Pengiriman - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-tracking">
+  <header class="page-header">
+    <h1>Tracking Pengiriman</h1>
+    <p class="muted">Masukkan nomor Delivery Order untuk melihat status.</p>
+  </header>
+
+  <main class="container">
+    <div class="form-card">
+      <label for="doInput">Nomor Delivery Order</label>
+      <input id="doInput" placeholder="EX: DO20251001" />
+      <button id="searchDo" class="btn primary">Cari</button>
+      <div>
+        <a class="btn small" href="dashboard.html">kembali</a>
+      </div>
+    </div>
+
+    <section id="resultArea" class="result-area hidden">
+      <h2>Hasil Pencarian</h2>
+      <p><strong>Nama Mahasiswa:</strong> <span id="rNama"></span></p>
+      <p><strong>Tanggal Kirim:</strong> <span id="rTanggal"></span></p>
+      <p><strong>Jenis Paket:</strong> <span id="rJenis"></span></p>
+      <p><strong>Total Pembayaran:</strong> <span id="rTotal"></span></p>
+
+      <div class="progress-wrapper">
+        <label><strong>Status Pengiriman</strong></label>
+        <div class="progress">
+          <div id="progressBar" class="progress-bar" style="width: 0%"></div>
+        </div>
+        <p id="rStatusText" class="muted"></p>
+      </div>
+
+      <div id="detailExpedisi" class="detail-expedisi"></div>
+    </section>
+
+    <div id="notFound" class="alert hidden">Nomor DO tidak ditemukan.</div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

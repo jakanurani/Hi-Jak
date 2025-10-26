@@ -1,0 +1,92 @@
+/* style.css - sederhana, mobile-first */
+:root{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0b78e3;
+  --accent-2:#0b78e3;
+  --danger:#ef4444;
+  --radius:12px;
+  --gap:12px;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#111}
+/* styling untuk gambar logo di sidebar */
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* agar teks dan gambar sejajar di tengah */
+  gap: 10px; /* jarak antar elemen (brand, greeting, gambar) */
+}
+
+.sidebar-top .pic {
+  width: 80px;      /* ubah sesuai kebutuhan, misal 60–100px */
+  height: auto;     /* agar proporsional */
+  border-radius: 12px; /* opsional, agar sudut sedikit melengkung */
+  margin-top: 8px;  /* beri jarak dari greeting */
+  object-fit: contain; /* biar tidak gepeng */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 6px;
+}
+
+.container{max-width:980px;margin:24px auto;padding:16px}
+.brand{font-size:28px;margin:0;color:var(--accent-2)}
+.brand.small{font-size:18px}
+.auth-card{max-width:420px;margin:40px auto;padding:20px;background:var(--card);border-radius:16px;box-shadow:0 6px 18px rgba(15,23,42,0.06);text-align:center}
+.lead{color:var(--muted);margin-bottom:16px}
+.form-card{display:flex;flex-direction:column;gap:10px}
+.form-card input{padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+.btn{padding:8px 12px;border-radius:10px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.btn.small{padding:6px 8px;font-size:13px}
+.btn.primary{background:var(--accent-2)}
+.btn.outline{background:transparent;border:1px solid #d1d5db;color:#111}
+/* helper */
+.helper-row{display:flex;justify-content:space-between;margin-top:8px}
+.link-btn{background:none;border:none;color:var(--accent);cursor:pointer;padding:6px}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,0.35);visibility:hidden;opacity:0;transition:all .18s}
+.modal[aria-hidden="false"]{visibility:visible;opacity:1}
+.modal-content{background:var(--card);padding:16px;border-radius:12px;max-width:420px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.2)}
+.modal .close{float:right;border:0;background:none;font-size:20px;cursor:pointer}
+
+/* layout for dashboard */
+.sidebar{position:fixed;left:8px;top:8px;bottom:8px;width:220px;background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.06);display:flex;flex-direction:column;gap:12px}
+.main-content{margin-left:256px;padding:24px}
+.greeting{font-weight:600;color:var(--muted)}
+.nav{display:flex;flex-direction:column;gap:8px}
+.nav-link{padding:8px 10px;border-radius:8px;text-decoration:none;color:#111}
+.nav-link.active{background:#eef2ff;color:var(--accent-2)}
+.topbar{margin-bottom:16px}
+
+/* cards */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+.card-actions{display:flex;gap:8px;margin-top:8px}
+
+/* tracking */
+.page-header{padding:16px}
+.result-area{margin-top:12px;background:var(--card);padding:12px;border-radius:12px}
+.hidden{display:none}
+.progress{background:#e6e9ef;border-radius:999px;height:12px;overflow:hidden;margin:8px 0}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0%;transition:width .6s}
+
+/* table stok */
+.table-card{background:var(--card);padding:12px;border-radius:12px}
+table{width:100%;border-collapse:collapse}
+table thead tr{background:#f3f4f6}
+th,td{padding:8px;border-bottom:1px solid #f1f5f9;text-align:left}
+.form-inline{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.form-inline input{padding:8px;border-radius:8px;border:1px solid #e6e9ef}
+.alert{background:#fff4f4;color:var(--danger);padding:10px;border-radius:8px;margin-top:12px;border:1px solid #fee2e2}
+
+/* responsive */
+@media (max-width:880px){
+  .sidebar{position:static;width:100%;display:flex;flex-direction:row;overflow:auto;padding:8px}
+  .main-content{margin-left:0}
+  .cards-grid{grid-template-columns:1fr}
+  .auth-card{margin:20px}
+  .container{padding:12px}
+}
